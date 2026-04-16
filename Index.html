@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Jeu de Go</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="Js/Idx_script.JS"></script>
+    </head>
+
+    <body>
+        
+
+        <!-- MENU -->
+        <nav class="navbar navbar-dark bg-dark"> <!--Classes Bootstrap pour un menu noir avec texte clair.-->
+            <div class="container-fluid"> <!--Conteneur Bootstrap qui prend toute la largeur-->
+
+                <span class="navbar-brand mb-0 h1">Jeu de Go</span> <!--Affichage du titre dans le menu-->
+
+                <div>
+                    <button class="btn btn-outline-light me-2" onclick="showSection('presentation')">Présentation</button>
+                    <button class="btn btn-outline-light me-2" onclick="showSection('histoire')">Histoire</button>
+                    <button class="btn btn-outline-light me-2" onclick="showSection('regles')">Règles</button>
+                    <button class="btn btn-outline-light" onclick="showSection('jeu')">Jouer</button>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <div class="container mt-4"> <!--conteneur qui nous permet de centrer l'image-->
+            
+            <img src="https://ffg.jeudego.org/informations/boiteoutils/imprimeur/affiches/affiche_1_A3.jpg" class="logo-go" alt="Affiche Go">
+
+            <!-- PRESENTATION -->
+            <div id="presentation" class="section">
+
+                <h2>Présentation</h2>
+
+                <p class="col">
+                    Le go, également appelé jeu de go, appelé en japonais igo (囲碁?), go (碁?) ou dans certaines expressions ki (棋?), en chinois (围棋 / 圍棋), en hanyu pinyin wéiqí (prononciation shanghaïenne wedji) et en coréen baduk (바둑), est un jeu de société originaire de Chine. Il oppose deux adversaires qui placent à tour de rôle des pierres, respectivement noires et blanches, sur les intersections d'un tablier quadrillé appelé goban en japonais (棋盤, qípán en chinois). Le but est de contrôler le plan de jeu en y construisant des « territoires ». Les pierres encerclées deviennent des « prisonniers », le gagnant étant le joueur ayant totalisé le plus de territoires et de prisonniers.
+
+                    Il s'agit du plus ancien jeu de stratégie combinatoire abstrait connu, probablement créé en Chine pendant la période des Printemps et Automnes. D’abord réservé aux classes dirigeantes, le go jouit d'une grande popularité en Chine, en Corée et au Japon. Dans le reste du monde, où sa découverte est récente, sa notoriété est croissante. Son succès tient autant à la simplicité de ses règles qu'à sa grande richesse combinatoire et sa profondeur stratégique.
+
+                    Le go sous sa forme actuelle a vu le jour au XVe siècle au Japon, puis cette forme a été réintroduite en Chine et en Corée. C'est depuis le Japon que le jeu est arrivé en Occident, et c'est pourquoi la terminologie du jeu utilisée en Occident est principalement japonaise plutôt que chinoise ou coréenne ; de même, le nom du jeu (« go ») utilisé en Occident est le nom courant utilisé en japonais (Igo appartient au style élevé, et la lecture ki est réservée à certaines expressions figées, par exemple Nihon Ki-in, Association japonaise du jeu de go).
+                </p>
+
+            </div>
+
+
+            <!-- HISTOIRE -->
+            <div id="histoire" class="section">
+            
+                <h2>Histoire</h2>
+
+                <p class="col">
+                    La très longue histoire du go s'est déroulée pour une grande part dans des mondes clos et séparés : probablement créé en Chine pendant la période des Printemps et Automnes (771-453 av. J.-C.), il arriva en Corée puis au Japon au VIe siècle avec l'apport de la culture chinoise par les moines bouddhistes chán. Les contacts avec l'Occident au XIXe siècle, après l'ouverture militaire forcée du Japon par les navires noirs des États-Unis puis le Royaume-Uni en 1854, lui permirent enfin, avec le japonisme, d'arriver en Occident. C'est seulement depuis la fin du XXe siècle que le go commence à s'unifier sur le plan mondial
+                </p>
+
+            </div>
+
+
+            <!-- REGLES -->
+            <div id="regles" class="section">
+            
+                <h2>L'éssentiel</h2>
+                <ul class="col">
+                    <li>Le plateau (Goban) : On joue sur les intersections d'une grille (généralement 19x19, mais aussi 9x9 ou 13x13 pour débuter).</li>
+                    <li>Les pierres : Les Noirs commencent, puis les joueurs posent alternativement une pierre de leur couleur sur une intersection vide.</li>
+                    <li>L'objectif : Contrôler plus de territoire que l'adversaire à la fin de la partie. Le territoire correspond aux intersections vides entourées par vos pierres.</li>
+                    <li>Libertés : Ce sont les intersections vides adjacentes (haut, bas, gauche, droite) à une pierre ou à un groupe de pierres.</li>
+                    <li>Capture : Si une pierre ou un groupe n'a plus aucune liberté (entièrement entouré par l'adversaire), il est retiré du plateau. Ce sont des "prisonniers".</li>
+                </ul>
+
+                <h2>Règles succinctes</h2>
+                <ul class="col">
+                    <li>Deux joueurs jouent chacun leur tour.</li>
+                    <li>Les pierres sont posées sur les intersections du plateau.</li>
+                    <li>Un groupe de pierres est capturé lorsqu’il n’a plus de libertés. Il est interdit de jouer un coup qui n'a aucune liberté, sauf si ce coup permet de capturer des pierres adverses.</li>
+                    <li>La règle du Kō : On ne peut pas jouer un coup qui redonnerait au plateau l'état exact qu'il avait au tour précédent. Cela évite les boucles infinies de captures mutuelles.</li>
+                    <li>Le joueur qui contrôle le plus de territoire gagne.</li>
+                </ul>
+
+                <h2>Fin de partie</h2>
+                <ul class="col">
+                    <li>La partie s'arrête quand les deux joueurs passent leur tour consécutivemen</li>
+                    <li>On compte les points : (Intersections entourées) + (Prisonniers capturés).</li>
+                    <li>Un groupe de pierres est capturé lorsqu’il n’a plus de libertés. Il est interdit de jouer un coup qui n'a aucune liberté, sauf si ce coup permet de capturer des pierres adverses.</li>
+                    <li>Le Komi : Comme Noir a l'avantage de commencer, on donne traditionnellement un bonus de points à Blanc (souvent 6,5 ou 7,5 points) pour équilibrer les chances.</li>
+                    <li>Le joueur qui contrôle le plus de territoire gagne.</li>
+                </ul>
+
+            </div>
+
+
+            <!-- JEU -->
+            <div id="jeu" class="section">
+
+                <div class="row">
+
+                    <!-- Configuration -->
+                    <div class="col-md-3">  <!--Colonne qui prend 3/12 :25% de la largeur sur écran moyen.-->
+
+                        <h3>Configuration</h3>
+                        
+                        <label class="col">Temps limite (minutes) :</label>
+                        <input type="number" class="form-control mb-3" id="tempsMax" value="10" min="1">
+
+                        <div class="h4 text-center text-danger font-monospace mt-3">
+                            Temps restant : <span id="chronoDisplay">--:--</span>
+                        </div>
+
+                        <label class="col">Taille du Goban</label>
+                        <select class="form-select mb-3" id="boardSize">
+                            <option value="9">9 x 9</option>
+                            <option value="13">13 x 13</option>
+                            <option value="19">19 x 19</option>
+                        </select>
+
+                        <label class="col">Type de joueur</label>
+                        <select class="form-select mb-3" id="modeJeu">
+                            <option value = "PvP">Joueur contre Joueur</option>
+                            <option value = "PvE">Joueur contre Ordinateur</option>
+                        </select>
+
+                        <label class="col">Handicap</label>
+                        <input type="number" class="form-control mb-3" id="handicap" min="0" max="9">
+
+                        <label class="col">Komi</label>
+                        <input type="number" class="form-control mb-3" id="komi" value="7.5">
+
+                        <button class="btn btn-success w-100 mb-2" onclick="nouvellePartie()">Nouvelle partie</button>
+                        <button id="btnPass" class="btn btn-warning w-100 mb-2" onclick="passerTour">Passer</button>
+                        <button id="btnEnd" class="btn btn-danger w-100">Fin de partie</button>
+
+                    </div>
+
+
+                    <!-- Plateau -->
+                    <div class="col-md-6 text-center">
+
+                        <h3>Goban</h3>
+
+                        <div id="board"></div>
+
+                    </div>
+
+
+                    <!-- Infos -->
+                    <div class="col-md-3">
+
+                        <h3>Informations</h3>
+                        
+
+                        <p class="col"> Prisonniers Noirs: <span id="blackPrisoners">0</span></p>
+                        <p class="col"> Prisonniers Blanc : <span id="whitePrisoners">0</span></p>
+
+                        <h4>Historique</h4>
+
+                        <ul id="moveHistory" class="list-group"></ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>
